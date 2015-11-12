@@ -16,12 +16,15 @@ import javax.swing.JFormattedTextField;
  * @see This control allow only numeric, "." and "," chars
  */
 public class NumericTextBox extends JFormattedTextField{
+    private int Length=Integer.MAX_VALUE;
     public NumericTextBox()
     {
         this.addKeyListener(new KeyListener() {
 
             @Override
-            public void keyTyped(KeyEvent e) {                
+            public void keyTyped(KeyEvent e) {  
+                if(getText().length()+1 > Length) 
+                    e.consume();
                 String regex ="^[0-9.]*$";
                 if(!String.valueOf(e.getKeyChar()).matches(regex) || (".".equals(String.valueOf(e.getKeyChar())) &&  getText().indexOf(".")>0))
                     e.consume();
@@ -37,6 +40,20 @@ public class NumericTextBox extends JFormattedTextField{
                 
             }
         });        
+    }
+
+    /**
+     * @return the Length
+     */
+    public int getLength() {
+        return Length;
+    }
+
+    /**
+     * @param Length the Length to set
+     */
+    public void setLength(int Length) {
+        this.Length = Length;
     }
     
 }
