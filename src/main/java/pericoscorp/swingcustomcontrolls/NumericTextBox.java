@@ -8,23 +8,22 @@ package pericoscorp.swingcustomcontrolls;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import javax.swing.JFormattedTextField;
 
 /**
  *
  * @author Arturo E. Salinas
  * @see This control allow only numeric, "." and "," chars
  */
-public class NumericTextBox extends JFormattedTextField{
-    private int Length=Integer.MAX_VALUE;
+public class NumericTextBox extends BaseTextBoxValidated{
+    
     public NumericTextBox()
     {
         this.addKeyListener(new KeyListener() {
 
             @Override
             public void keyTyped(KeyEvent e) {  
-                if(getText().length()+1 > Length) 
-                    e.consume();
+//                if(getText().length()+1 > Length) 
+//                    e.consume();
                 String regex ="^[0-9.]*$";
                 if(!String.valueOf(e.getKeyChar()).matches(regex) || (".".equals(String.valueOf(e.getKeyChar())) &&  getText().indexOf(".")>0))
                     e.consume();
