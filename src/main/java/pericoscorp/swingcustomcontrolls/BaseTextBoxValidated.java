@@ -63,11 +63,11 @@ public class BaseTextBoxValidated  extends JTextField{
                     requestFocus();
                 }   
                 
-                if(isIsRequired() && getText().isEmpty())
-                {
-                    JOptionPane.showMessageDialog(getParent(), "Este campo es obligatorio, no puede estar vacio!");                
-                    requestFocus();
-                }                       
+//                if(isIsRequired() && getText().isEmpty())
+//                {                       
+//                    JOptionPane.showMessageDialog(getParent(), "Este campo es obligatorio, no puede estar vacio!");                
+//                    //requestFocus();
+//                }                       
             }
         });
     }

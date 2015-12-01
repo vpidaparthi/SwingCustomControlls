@@ -44,11 +44,11 @@ public class BaseComboBoxValidated extends JComboBox<Object> {
 
             @Override
             public void focusLost(FocusEvent e) {                
-                if(getSelectedIndex()==-1 || getSelectedIndex()==0) 
-                { 
-                    JOptionPane.showMessageDialog(getParent(), "Este campo es obligatorio, no puede estar vacio!");                
-                    requestFocus();
-                }
+//                if(getSelectedIndex()==-1 || getSelectedIndex()==0) 
+//                { 
+//                    JOptionPane.showMessageDialog(getParent(), "Este campo es obligatorio, no puede estar vacio!");                
+//                    requestFocus();
+//                }
             }
         });
     }

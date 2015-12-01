@@ -56,16 +56,16 @@ public class DateTextBox extends BaseTextBoxValidated {
 //                    JOptionPane.showMessageDialog(getParent(), "Campo requerido!");                
 //                }
                 String regex = "(0[1-9]|[12][0-9]|3[01])\\/(0[1-9]|1[012])\\/(19|20)\\d\\d";
-                if (getText().length() > getLength()) {
-                    JOptionPane.showMessageDialog(getParent(), "Formato de fecha invalido!");
-                    requestFocus();
-                }
-
-//                if(!getText().isEmpty() && !getText().matches(regex))
-//                {
-//                    JOptionPane.showMessageDialog(getParent(), "Formato de fecha invalido!");                
+//                if (getText().length() > getLength()) {
+//                    JOptionPane.showMessageDialog(getParent(), "Formato de fecha invalido!");
 //                    requestFocus();
 //                }
+
+                if(!getText().isEmpty() && !getText().matches(regex))
+                {
+                    JOptionPane.showMessageDialog(getParent(), "Formato de fecha invalido!");                
+                    requestFocus();
+                }
             }
         });
     }

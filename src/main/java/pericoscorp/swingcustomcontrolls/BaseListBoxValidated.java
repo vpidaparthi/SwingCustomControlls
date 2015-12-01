@@ -43,11 +43,11 @@ public class BaseListBoxValidated extends JList<Object> {
 
             @Override
             public void focusLost(FocusEvent e) {                
-                if(getSelectedIndex()==-1) 
-                { 
-                    JOptionPane.showMessageDialog(getParent(), "Este campo es obligatorio, no puede estar vacio!");                
-                    requestFocus();
-                }
+//                if(getSelectedIndex()==-1) 
+//                { 
+//                    JOptionPane.showMessageDialog(getParent(), "Este campo es obligatorio, no puede estar vacio!");                
+//                    requestFocus();
+//                }
             }
         });
     }
