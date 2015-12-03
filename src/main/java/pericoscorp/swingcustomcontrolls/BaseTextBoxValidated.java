@@ -53,10 +53,8 @@ public class BaseTextBoxValidated  extends JTextField{
             public void focusLost(FocusEvent e) {                
                 if(getText().length() > getLength()) 
                 { 
-                    JOptionPane.showMessageDialog(getParent(), "Formato invalido!");                
-                    requestFocus();
-                }
-                 
+                    setText(getText().substring(0, getLength()));
+                }                 
                 if(!Regex.isEmpty() &&  !getText().isEmpty() && !getText().matches(Regex) )
                 {
                     JOptionPane.showMessageDialog(getParent(), "Formato invalido!");                
